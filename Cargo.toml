@@ -1,0 +1,18 @@
+[package]
+name = "opencode-tokens"
+version = "0.1.0"
+edition = "2021"
+description = "Token reduction proxy for OpenCode - compress command output to save LLM context"
+
+[[bin]]
+name = "oct"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.31", features = ["bundled"] }
+tiktoken-rs = "0.6"
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "5"
