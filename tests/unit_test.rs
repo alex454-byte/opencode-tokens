@@ -367,8 +367,8 @@ fn init_creates_oct_md() {
     let output = oct().args(["init"]).current_dir(&tmp).output().unwrap();
     assert!(output.status.success());
 
-    let oct_md = tmp.join("OCT.md");
-    assert!(oct_md.exists(), "OCT.md should be created");
+    let oct_md = tmp.join("AGENTS.md");
+    assert!(oct_md.exists(), "AGENTS.md should be created");
 
     let content = std::fs::read_to_string(&oct_md).unwrap();
     assert!(content.contains("oct"));
@@ -384,12 +384,12 @@ fn init_uninstall() {
 
     // Create first
     let _ = oct().args(["init"]).current_dir(&tmp).output();
-    assert!(tmp.join("OCT.md").exists());
+    assert!(tmp.join("AGENTS.md").exists());
 
     // Uninstall
     let output = oct().args(["init", "--uninstall"]).current_dir(&tmp).output().unwrap();
     assert!(output.status.success());
-    assert!(!tmp.join("OCT.md").exists(), "OCT.md should be removed");
+    assert!(!tmp.join("AGENTS.md").exists(), "AGENTS.md should be removed");
 
     std::fs::remove_dir_all(&tmp).ok();
 }

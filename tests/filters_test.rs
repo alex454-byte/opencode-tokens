@@ -96,7 +96,7 @@ fn init_local() {
         .output()
         .unwrap();
     assert!(output.status.success());
-    assert!(tmp.join("OCT.md").exists());
+    assert!(tmp.join("AGENTS.md").exists());
 
     // Cleanup
     std::fs::remove_dir_all(&tmp).ok();
